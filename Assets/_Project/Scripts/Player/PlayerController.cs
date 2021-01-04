@@ -6,12 +6,9 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        private const float _groundCheckDistance = 0.1f;
         
         private Animator _animator;
         private Rigidbody2D _rigidbody2D;
-        private Collider2D _collider2D;
-        private int _groundLayerMask;
         
         [SerializeField, InlineEditor] public PlayerStateDataSO data;
         
@@ -23,8 +20,6 @@ namespace Player
         {
             _animator = GetComponent<Animator>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            _collider2D = GetComponent<Collider2D>();
-            _groundLayerMask = LayerMask.GetMask("Ground");
         }
 
         private void OnEnable()
@@ -32,6 +27,7 @@ namespace Player
             InputReader.Instance.moveEvent += OnMovementInput;
             InputReader.Instance.jumpEvent += OnJumpInput;
             InputReader.Instance.attackEvent += OnAttackInput;
+            InputReader.Instance.defendEvent += OnDefendInput;
         }
 
         private void OnDisable()
@@ -39,6 +35,7 @@ namespace Player
             InputReader.Instance.moveEvent -= OnMovementInput;
             InputReader.Instance.jumpEvent -= OnJumpInput;
             InputReader.Instance.attackEvent -= OnAttackInput;
+            InputReader.Instance.defendEvent -= OnDefendInput;
         }
 
         #endregion
@@ -59,6 +56,8 @@ namespace Player
         private void OnJumpInput() => _animator.TriggerJump(this);
 
         private void OnAttackInput() => _animator.TriggerAttack(this);
+
+        private void OnDefendInput(bool IsKeyDown) => _animator.SetIsDefending(IsKeyDown);
 
         #endregion
     }
