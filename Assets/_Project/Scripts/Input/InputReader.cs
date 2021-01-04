@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Utilities;
 
 namespace Input
 {
-    public class InputReader
+    public class InputReader : SingletonScriptableObject<InputReader>
     {
         private ApplicationInput _applicationInput;
         
