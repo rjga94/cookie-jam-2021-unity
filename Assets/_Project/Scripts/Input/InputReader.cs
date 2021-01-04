@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Utilities;
 
 namespace Input
 {
-    public class InputReader
+    public class InputReader : SingletonScriptableObject<InputReader>
     {
         private ApplicationInput _applicationInput;
         
         public event UnityAction<Vector2> moveEvent;
         public event UnityAction jumpEvent;
         public event UnityAction attackEvent;
-        public event UnityAction defendEvent;
+        public event UnityAction<bool> defendEvent;
         public event UnityAction pauseEvent;
 
         private void OnEnable()
@@ -33,7 +34,8 @@ namespace Input
 
         private void OnAttack(InputAction.CallbackContext context) => attackEvent?.Invoke();
 
-        private void OnDefend(InputAction.CallbackContext obj) => defendEvent?.Invoke();
+        private void OnDefendStarted(InputAction.CallbackContext obj) => defendEvent?.Invoke(true);
+        private void OnDefendCanceled(InputAction.CallbackContext obj) => defendEvent?.Invoke(false);
 
         private void OnPause(InputAction.CallbackContext obj) => pauseEvent?.Invoke();
 
@@ -42,7 +44,8 @@ namespace Input
             _applicationInput.Gameplay.Move.performed += OnMovement;
             _applicationInput.Gameplay.Jump.performed += OnJump;
             _applicationInput.Gameplay.Attack.performed += OnAttack;
-            _applicationInput.Gameplay.Defend.performed += OnDefend;
+            _applicationInput.Gameplay.Defend.started += OnDefendStarted;
+            _applicationInput.Gameplay.Defend.canceled += OnDefendCanceled;
             _applicationInput.Gameplay.Pause.performed += OnPause;
         }
     }
