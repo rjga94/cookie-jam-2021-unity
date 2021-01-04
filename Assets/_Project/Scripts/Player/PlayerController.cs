@@ -31,12 +31,14 @@ namespace Player
         {
             InputReader.Instance.moveEvent += OnMovementInput;
             InputReader.Instance.jumpEvent += OnJumpInput;
+            InputReader.Instance.attackEvent += OnAttackInput;
         }
 
         private void OnDisable()
         {
             InputReader.Instance.moveEvent -= OnMovementInput;
             InputReader.Instance.jumpEvent -= OnJumpInput;
+            InputReader.Instance.attackEvent -= OnAttackInput;
         }
 
         #endregion
@@ -55,7 +57,9 @@ namespace Player
         }
 
         private void OnJumpInput() => _animator.TriggerJump(this);
-        
+
+        private void OnAttackInput() => _animator.TriggerAttack(this);
+
         #endregion
     }
 }
