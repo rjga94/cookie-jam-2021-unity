@@ -5,11 +5,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Utilities;
 using Utilities.Extensions;
 
 namespace Managers
 {
-    public class CutSceneManager : MonoBehaviour
+    public class CutSceneManager : SingletonMonoBehaviour<CutSceneManager>
     {
         [SerializeField] private GameObject CutSceneGO;
         [SerializeField] private Image image;
@@ -22,8 +23,6 @@ namespace Managers
         private string _currentSentence;
         private Coroutine _animateTextCoroutine, _animateImageCoroutine;
 
-        public event UnityAction OnCutSceneEndEvent;
-        
         #region Input events
 
         private void OnStepInput()
@@ -108,7 +107,6 @@ namespace Managers
 
         private void DisableCutSceneUI()
         {
-            OnCutSceneEndEvent?.Invoke();
             InputReader.Instance.stepDialogEvent -= OnStepInput;
             InputReader.Instance.closeDialogEvent -= OnCloseInput;
             InputReader.Instance.EnableGameplayInput();

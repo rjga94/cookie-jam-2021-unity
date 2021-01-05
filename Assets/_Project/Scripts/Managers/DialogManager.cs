@@ -5,10 +5,11 @@ using Input;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 
 namespace Managers
 {
-    public class DialogManager : MonoBehaviour
+    public class DialogManager : SingletonMonoBehaviour<DialogManager>
     {
         [SerializeField] private GameObject dialogBoxGO;
         [SerializeField] private Image characterImage;
