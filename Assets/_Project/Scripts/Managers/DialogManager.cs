@@ -13,6 +13,7 @@ namespace Managers
         [SerializeField] private GameObject dialogBoxGO;
         [SerializeField] private Image characterImage;
         [SerializeField] private TMP_Text textBox;
+        [SerializeField, Range(0.01f, 1f)] private float textAnimationSpeed;
 
         private Queue<string> _paragraphs;
         private string _currentParagraph;
@@ -52,8 +53,10 @@ namespace Managers
             foreach (var c in _currentParagraph)
             {
                 textBox.text += c;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(textAnimationSpeed);
             }
+
+            _animateTextCoroutine = null;
         }
         
         private void AnimateNextParagraph()

@@ -607,6 +607,7 @@ MonoBehaviour:
   dialogBoxGO: {fileID: 200609356}
   characterImage: {fileID: 1439689184}
   textBox: {fileID: 452362658}
+  textAnimationSpeed: 0.01
 --- !u!1 &1957017113
 GameObject:
   m_ObjectHideFlags: 0
