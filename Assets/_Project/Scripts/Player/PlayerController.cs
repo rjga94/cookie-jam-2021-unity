@@ -1,4 +1,5 @@
 ﻿using Input;
+using Interfaces;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Player
         
         private Animator _animator;
         private Rigidbody2D _rigidbody2D;
+        private Interactable _interactable;
         
         [SerializeField, InlineEditor] public PlayerStateDataSO data;
         
@@ -28,6 +30,7 @@ namespace Player
             InputReader.Instance.jumpEvent += OnJumpInput;
             InputReader.Instance.attackEvent += OnAttackInput;
             InputReader.Instance.defendEvent += OnDefendInput;
+            InputReader.Instance.interactEvent += OnInteractInput;
         }
 
         private void OnDisable()
@@ -36,6 +39,7 @@ namespace Player
             InputReader.Instance.jumpEvent -= OnJumpInput;
             InputReader.Instance.attackEvent -= OnAttackInput;
             InputReader.Instance.defendEvent -= OnDefendInput;
+            InputReader.Instance.interactEvent -= OnInteractInput;
         }
 
         #endregion
@@ -58,7 +62,23 @@ namespace Player
         private void OnAttackInput() => _animator.TriggerAttack(this);
 
         private void OnDefendInput(bool IsKeyDown) => _animator.SetIsDefending(IsKeyDown);
+        
+        private void OnInteractInput()
+        {
+            if (!CanInteract()) return;
+            _interactable?.OnInteract();
+        }
 
         #endregion
+
+        private void OnTriggerEnter2D(Collider2D other) => _interactable = other.GetComponent<Interactable>();
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            var interactable = other.GetComponent<Interactable>();
+            if (interactable != null && interactable == _interactable) _interactable = null;
+        }
+
+        private bool CanInteract() => _interactable != null;
     }
 }
