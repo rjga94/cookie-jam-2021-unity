@@ -59,6 +59,14 @@ namespace Input
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b153638-1a95-489d-9dc2-954fdb860fd3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -160,6 +168,85 @@ namespace Input
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b73fc36e-edde-4c54-9aab-ce3c9ce91a1d"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Dialog"",
+            ""id"": ""37f0784c-8492-439a-9bb0-55710e4194e2"",
+            ""actions"": [
+                {
+                    ""name"": ""Step"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1c375e7-bcee-4e9f-8492-32646c44b2c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Close"",
+                    ""type"": ""Button"",
+                    ""id"": ""bc295d59-3bf9-4180-950f-52e68cee76bc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5995d373-9965-47db-b580-3a2b80065a37"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Step"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf39d21f-0e0e-4563-895c-d266f76bbb2c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Step"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1911b976-0fe6-4518-b6a2-55ad4aef894c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Step"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cbad4e2e-1b9c-4b84-92c9-7d498c493df3"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -201,6 +288,11 @@ namespace Input
             m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
             m_Gameplay_Defend = m_Gameplay.FindAction("Defend", throwIfNotFound: true);
             m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+            m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+            // Dialog
+            m_Dialog = asset.FindActionMap("Dialog", throwIfNotFound: true);
+            m_Dialog_Step = m_Dialog.FindAction("Step", throwIfNotFound: true);
+            m_Dialog_Close = m_Dialog.FindAction("Close", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -255,6 +347,7 @@ namespace Input
         private readonly InputAction m_Gameplay_Attack;
         private readonly InputAction m_Gameplay_Defend;
         private readonly InputAction m_Gameplay_Pause;
+        private readonly InputAction m_Gameplay_Interact;
         public struct GameplayActions
         {
             private @ApplicationInput m_Wrapper;
@@ -264,6 +357,7 @@ namespace Input
             public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
             public InputAction @Defend => m_Wrapper.m_Gameplay_Defend;
             public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+            public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -288,6 +382,9 @@ namespace Input
                     @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                     @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                     @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                    @Interact.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
+                    @Interact.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
+                    @Interact.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
                 }
                 m_Wrapper.m_GameplayActionsCallbackInterface = instance;
                 if (instance != null)
@@ -307,10 +404,54 @@ namespace Input
                     @Pause.started += instance.OnPause;
                     @Pause.performed += instance.OnPause;
                     @Pause.canceled += instance.OnPause;
+                    @Interact.started += instance.OnInteract;
+                    @Interact.performed += instance.OnInteract;
+                    @Interact.canceled += instance.OnInteract;
                 }
             }
         }
         public GameplayActions @Gameplay => new GameplayActions(this);
+
+        // Dialog
+        private readonly InputActionMap m_Dialog;
+        private IDialogActions m_DialogActionsCallbackInterface;
+        private readonly InputAction m_Dialog_Step;
+        private readonly InputAction m_Dialog_Close;
+        public struct DialogActions
+        {
+            private @ApplicationInput m_Wrapper;
+            public DialogActions(@ApplicationInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Step => m_Wrapper.m_Dialog_Step;
+            public InputAction @Close => m_Wrapper.m_Dialog_Close;
+            public InputActionMap Get() { return m_Wrapper.m_Dialog; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(DialogActions set) { return set.Get(); }
+            public void SetCallbacks(IDialogActions instance)
+            {
+                if (m_Wrapper.m_DialogActionsCallbackInterface != null)
+                {
+                    @Step.started -= m_Wrapper.m_DialogActionsCallbackInterface.OnStep;
+                    @Step.performed -= m_Wrapper.m_DialogActionsCallbackInterface.OnStep;
+                    @Step.canceled -= m_Wrapper.m_DialogActionsCallbackInterface.OnStep;
+                    @Close.started -= m_Wrapper.m_DialogActionsCallbackInterface.OnClose;
+                    @Close.performed -= m_Wrapper.m_DialogActionsCallbackInterface.OnClose;
+                    @Close.canceled -= m_Wrapper.m_DialogActionsCallbackInterface.OnClose;
+                }
+                m_Wrapper.m_DialogActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @Step.started += instance.OnStep;
+                    @Step.performed += instance.OnStep;
+                    @Step.canceled += instance.OnStep;
+                    @Close.started += instance.OnClose;
+                    @Close.performed += instance.OnClose;
+                    @Close.canceled += instance.OnClose;
+                }
+            }
+        }
+        public DialogActions @Dialog => new DialogActions(this);
         private int m_KeyboardandMouseSchemeIndex = -1;
         public InputControlScheme KeyboardandMouseScheme
         {
@@ -336,6 +477,12 @@ namespace Input
             void OnAttack(InputAction.CallbackContext context);
             void OnDefend(InputAction.CallbackContext context);
             void OnPause(InputAction.CallbackContext context);
+            void OnInteract(InputAction.CallbackContext context);
+        }
+        public interface IDialogActions
+        {
+            void OnStep(InputAction.CallbackContext context);
+            void OnClose(InputAction.CallbackContext context);
         }
     }
 }
