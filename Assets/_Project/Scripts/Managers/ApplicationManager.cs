@@ -1,13 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Managers
 {
     public enum GameScene
     {
-        Initialization,
-        TestLevel
+        TestScene
     }
     
     public class ApplicationManager : MonoBehaviour
@@ -16,14 +14,23 @@ namespace Managers
 
         private void Awake() => _timeScale = Time.timeScale;
 
+        private void Start()
+        {
+#if !UNITY_EDITOR
+            LoadScene(GameScene.TestScene);
+#endif
+        }
+
         private void ResetTimeScale() => Time.timeScale = _timeScale;
 
         private void StopTimeScale() => Time.timeScale = 0f;
         
         public void LoadScene(GameScene scene)
         {
+            print("load scene");
             if (SceneManager.GetActiveScene().name != scene.ToString())
             {
+                print("things");
                 SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
                 SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Additive);
             }
