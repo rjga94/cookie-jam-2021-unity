@@ -19,32 +19,16 @@ namespace Managers
         private string _currentParagraph;
         private Coroutine _animateTextCoroutine;
 
-        #region Lifecycle
-
-        private void OnEnable()
-        {
-            InputReader.Instance.stepDialogEvent += OnStepDialogInput;
-            InputReader.Instance.closeDialogEvent += OnCloseDialogInput;
-        }
-
-        private void OnDisable()
-        {
-            InputReader.Instance.stepDialogEvent -= OnStepDialogInput;
-            InputReader.Instance.closeDialogEvent -= OnCloseDialogInput;
-        }
-
-        #endregion
-
         #region Input events
 
-        private void OnStepDialogInput()
+        private void OnStepInput()
         {
             if (_animateTextCoroutine != null) SkipAnimation();
             else if (_paragraphs.Count == 0) DisableDialogBox();
             else AnimateNextParagraph();
         }
 
-        private void OnCloseDialogInput() => DisableDialogBox();
+        private void OnCloseInput() => DisableDialogBox();
 
         #endregion
 
@@ -79,10 +63,14 @@ namespace Managers
         {
             dialogBoxGO.SetActive(true);
             InputReader.Instance.EnableDialogInput();
+            InputReader.Instance.stepDialogEvent += OnStepInput;
+            InputReader.Instance.closeDialogEvent += OnCloseInput;
         }
 
         private void DisableDialogBox()
         {
+            InputReader.Instance.stepDialogEvent -= OnStepInput;
+            InputReader.Instance.closeDialogEvent -= OnCloseInput;
             InputReader.Instance.EnableGameplayInput();
             dialogBoxGO.SetActive(false);
         }

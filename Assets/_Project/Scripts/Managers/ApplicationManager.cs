@@ -5,6 +5,7 @@ namespace Managers
 {
     public enum GameScene
     {
+        StartCutScene,
         TestScene
     }
     
@@ -12,12 +13,14 @@ namespace Managers
     {
         private float _timeScale;
 
+        public static ApplicationManager Instance => FindObjectOfType<ApplicationManager>();
+        
         private void Awake() => _timeScale = Time.timeScale;
 
         private void Start()
         {
 #if !UNITY_EDITOR
-            LoadScene(GameScene.TestScene);
+            LoadScene(GameScene.StartCutScene);
 #endif
         }
 
@@ -27,11 +30,9 @@ namespace Managers
         
         public void LoadScene(GameScene scene)
         {
-            print("load scene");
             if (SceneManager.GetActiveScene().name != scene.ToString())
             {
-                print("things");
-                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+                SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1));
                 SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Additive);
             }
             ResetTimeScale();
