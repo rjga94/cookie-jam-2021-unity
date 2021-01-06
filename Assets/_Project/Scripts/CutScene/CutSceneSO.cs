@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Utilities;
 
-namespace Managers
+namespace CutScene
 {
     [System.Serializable]
     public class CutSceneSlide
