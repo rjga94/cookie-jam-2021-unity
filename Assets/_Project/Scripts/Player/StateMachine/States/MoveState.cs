@@ -18,7 +18,7 @@ namespace Player.States
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            _rigidbody2D.velocity = new Vector2(_controller.movementAxis.x * _data.movementSpeed * Time.deltaTime, _rigidbody2D.velocity.y);
+            _rigidbody2D.velocity = new Vector2(_controller.movementAxis.x * _data.movementSpeed * Time.fixedDeltaTime, _rigidbody2D.velocity.y);
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex, AnimatorControllerPlayable controller)

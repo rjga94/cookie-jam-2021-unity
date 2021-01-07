@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89db4078d54a4c199d8512ad5f431d5d, type: 3}
   m_Name: PlayerStateData
   m_EditorClassIdentifier: 
-  movementSpeed: 1200
+  movementSpeed: 500
   jumpForce: 20

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52dd9b652cc4b32989977ad2cda9c06, type: 3}
   m_Name: Enemy1_StateData
   m_EditorClassIdentifier: 
-  moveSpeed: 600
+  moveSpeed: 200
   attackPower: 5

@@ -21,7 +21,7 @@ namespace Enemy.StateMachine.States
             if (_rigidbody2D.position.x > _controller.playerPosition.x) movementAxisX = -1;
             else if (_rigidbody2D.position.x < _controller.playerPosition.x) movementAxisX = 1;
 
-            _rigidbody2D.velocity = new Vector2(movementAxisX * _data.moveSpeed * Time.deltaTime, _rigidbody2D.velocity.y);
+            _rigidbody2D.velocity = new Vector2(movementAxisX * _data.moveSpeed * Time.fixedDeltaTime, _rigidbody2D.velocity.y);
         }
     }
 }
