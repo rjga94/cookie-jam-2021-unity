@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf76ccb888d1481eb5bd1d5a464b41ac, type: 3}
   m_Name: AudioInjector
   m_EditorClassIdentifier: 
-  PlayerAttack: {fileID: 11400000, guid: 9b51330b2ebd8a44da2530ad1675fe00, type: 2}
-  BackgroundMusic: {fileID: 0}
+  PlayerFootstep: {fileID: 0}
+  PlayerJump: {fileID: 0}
+  PlayerLand: {fileID: 0}
+  PlayerAttack: {fileID: 0}
+  PlayerHurt: {fileID: 0}
+  PlayerDeath: {fileID: 0}
+  PlayerLootPickup: {fileID: 0}
+  LevelBGM: {fileID: 0}
+  CutSceneBGM: {fileID: 0}
+  CutSceneSlideChange: {fileID: 0}

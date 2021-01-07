@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using JetBrains.Annotations;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Utilities;
 
@@ -8,9 +9,19 @@ namespace Audio
     public class AudioInjectorSO : ScriptableObject
     {
         [Title("Player SFX")]
-        [SerializeField] public AudioPoolSO PlayerAttack;
+        [SerializeField, CanBeNull, LabelText("Footstep")] public AudioPoolSO PlayerFootstep;
+        [SerializeField, CanBeNull, LabelText("Jump")] public AudioPoolSO PlayerJump;
+        [SerializeField, CanBeNull, LabelText("Land")] public AudioPoolSO PlayerLand;
+        [SerializeField, CanBeNull, LabelText("Attack")] public AudioPoolSO PlayerAttack;
+        [SerializeField, CanBeNull, LabelText("Hurt")] public AudioPoolSO PlayerHurt;
+        [SerializeField, CanBeNull, LabelText("Death")] public AudioPoolSO PlayerDeath;
+        [SerializeField, CanBeNull, LabelText("Loot Pickup")] public AudioPoolSO PlayerLootPickup;
 
-        [Title("Background Music")]
-        [SerializeField] public AudioPoolSO BackgroundMusic;
+        [Title("Level SFX")]
+        [SerializeField, CanBeNull, LabelText("Background Music")] public AudioPoolSO LevelBGM;
+
+        [Title("StartCutScene SFX")] 
+        [SerializeField, CanBeNull, LabelText("Background Music")] public AudioPoolSO CutSceneBGM;
+        [SerializeField, CanBeNull, LabelText("Slide Change")] public AudioPoolSO CutSceneSlideChange;
     }
 }
