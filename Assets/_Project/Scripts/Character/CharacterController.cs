@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Character
 {
-    public class CharacterController : MonoBehaviour, Interactable
+    public class CharacterController : MonoBehaviour, IInteractable
     {
         [SerializeField, InlineEditor] private DialogSO dialogSO;
         

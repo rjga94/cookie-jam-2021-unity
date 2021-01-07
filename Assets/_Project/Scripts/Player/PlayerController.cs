@@ -8,10 +8,9 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        
         private Animator _animator;
         private Rigidbody2D _rigidbody2D;
-        private Interactable _interactable;
+        private IInteractable _interactable;
         
         [SerializeField, InlineEditor] public PlayerStateDataSO data;
         
@@ -74,14 +73,14 @@ namespace Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            _interactable = other.GetComponent<Interactable>();
+            _interactable = other.GetComponent<IInteractable>();
             if (_interactable == null) return;
             DialogManager.Instance.ShowInteractMessage();
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            var interactable = other.GetComponent<Interactable>();
+            var interactable = other.GetComponent<IInteractable>();
             if (interactable != null && interactable == _interactable)
             {
                 DialogManager.Instance.DismissInteractMessage();

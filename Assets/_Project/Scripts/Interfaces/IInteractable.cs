@@ -1,6 +1,6 @@
 ﻿namespace Interfaces
 {
-    public interface Interactable
+    public interface IInteractable
     {
         void OnInteract();
     }
