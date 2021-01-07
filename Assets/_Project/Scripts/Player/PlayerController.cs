@@ -1,5 +1,6 @@
 ﻿using Input;
 using Interfaces;
+using Managers;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -71,12 +72,21 @@ namespace Player
 
         #endregion
 
-        private void OnTriggerEnter2D(Collider2D other) => _interactable = other.GetComponent<Interactable>();
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            _interactable = other.GetComponent<Interactable>();
+            if (_interactable == null) return;
+            DialogManager.Instance.ShowInteractMessage();
+        }
 
         private void OnTriggerExit2D(Collider2D other)
         {
             var interactable = other.GetComponent<Interactable>();
-            if (interactable != null && interactable == _interactable) _interactable = null;
+            if (interactable != null && interactable == _interactable)
+            {
+                DialogManager.Instance.DismissInteractMessage();
+                _interactable = null;
+            }
         }
 
         private bool CanInteract() => _interactable != null;

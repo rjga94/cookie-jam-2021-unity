@@ -9,10 +9,6 @@ namespace Character
     {
         [SerializeField, InlineEditor] private DialogSO dialogSO;
         
-        public void OnInteract()
-        {
-            var dialogManager = FindObjectOfType<DialogManager>();
-            dialogManager.StartDialog(dialogSO);
-        }
+        public void OnInteract() => DialogManager.Instance.StartDialog(dialogSO);
     }
 }

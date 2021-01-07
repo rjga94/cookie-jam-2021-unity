@@ -12,6 +12,7 @@ namespace Managers
     public class DialogManager : SingletonMonoBehaviour<DialogManager>
     {
         [SerializeField] private GameObject dialogBoxGO;
+        [SerializeField] private GameObject interactMessageGO;
         [SerializeField] private Image characterImage;
         [SerializeField] private TMP_Text textBox;
         [SerializeField, Range(0.01f, 1f)] private float textAnimationSpeed;
@@ -82,5 +83,9 @@ namespace Managers
             EnableDialogBox();
             AnimateNextParagraph();
         }
+
+        public void ShowInteractMessage() => interactMessageGO.SetActive(true);
+
+        public void DismissInteractMessage() => interactMessageGO.SetActive(false);
     }
 }
