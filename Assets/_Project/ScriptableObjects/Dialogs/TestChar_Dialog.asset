@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paragraphs:
   - first sentence
-  - second sentence !
-  - third sentence! this one is very long to test the character timing!
+  - second sentence ! second sentence !
+  - third sentence! third sentence! third sentence!
+  - fourth sentence! fourth sentence! fourth sentence! fourth sentence!

@@ -14,6 +14,8 @@ namespace Managers
     {
         private float _timeScale;
 
+        public bool IsGamePaused => _timeScale == 0f;
+        
         private void Awake() => _timeScale = Time.timeScale;
 
         private void ResetTimeScale() => Time.timeScale = _timeScale;

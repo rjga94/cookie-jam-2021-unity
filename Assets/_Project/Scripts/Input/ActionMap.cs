@@ -3,6 +3,7 @@
     public enum ActionMap
     {
         Gameplay,
-        Dialog
+        Dialog,
+        Menu
     }
 }

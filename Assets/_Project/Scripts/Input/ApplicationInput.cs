@@ -249,6 +249,33 @@ namespace Input
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""1fad6545-3cef-4f58-aa93-e5e3a6f615f5"",
+            ""actions"": [
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1834ca0-edbd-431b-a765-c4c20088e1d7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d2b37f52-566d-4cf1-b41b-f295779143df"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -293,6 +320,9 @@ namespace Input
             m_Dialog = asset.FindActionMap("Dialog", throwIfNotFound: true);
             m_Dialog_Step = m_Dialog.FindAction("Step", throwIfNotFound: true);
             m_Dialog_Close = m_Dialog.FindAction("Close", throwIfNotFound: true);
+            // Menu
+            m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+            m_Menu_Cancel = m_Menu.FindAction("Cancel", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -452,6 +482,39 @@ namespace Input
             }
         }
         public DialogActions @Dialog => new DialogActions(this);
+
+        // Menu
+        private readonly InputActionMap m_Menu;
+        private IMenuActions m_MenuActionsCallbackInterface;
+        private readonly InputAction m_Menu_Cancel;
+        public struct MenuActions
+        {
+            private @ApplicationInput m_Wrapper;
+            public MenuActions(@ApplicationInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Cancel => m_Wrapper.m_Menu_Cancel;
+            public InputActionMap Get() { return m_Wrapper.m_Menu; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+            public void SetCallbacks(IMenuActions instance)
+            {
+                if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+                {
+                    @Cancel.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
+                    @Cancel.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
+                    @Cancel.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
+                }
+                m_Wrapper.m_MenuActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @Cancel.started += instance.OnCancel;
+                    @Cancel.performed += instance.OnCancel;
+                    @Cancel.canceled += instance.OnCancel;
+                }
+            }
+        }
+        public MenuActions @Menu => new MenuActions(this);
         private int m_KeyboardandMouseSchemeIndex = -1;
         public InputControlScheme KeyboardandMouseScheme
         {
@@ -483,6 +546,10 @@ namespace Input
         {
             void OnStep(InputAction.CallbackContext context);
             void OnClose(InputAction.CallbackContext context);
+        }
+        public interface IMenuActions
+        {
+            void OnCancel(InputAction.CallbackContext context);
         }
     }
 }

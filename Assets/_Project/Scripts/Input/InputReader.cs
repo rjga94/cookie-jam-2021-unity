@@ -18,6 +18,7 @@ namespace Input
         public event UnityAction interactEvent;
         public event UnityAction stepDialogEvent;
         public event UnityAction closeDialogEvent;
+        public event UnityAction cancelMenuEvent;
 
         private void OnEnable()
         {
@@ -50,6 +51,8 @@ namespace Input
         
         private void OnClose(InputAction.CallbackContext obj) => closeDialogEvent?.Invoke();
 
+        private void OnCancelMenu(InputAction.CallbackContext obj) => cancelMenuEvent?.Invoke();
+        
         private void HookEvents()
         {
             _applicationInput.Gameplay.Move.performed += OnMovement;
@@ -62,6 +65,8 @@ namespace Input
 
             _applicationInput.Dialog.Step.performed += OnStep;
             _applicationInput.Dialog.Close.performed += OnClose;
+
+            _applicationInput.Menu.Cancel.performed += OnCancelMenu;
         }
 
         private void UpdateActiveActionMap(ActionMap actionMap)
@@ -71,6 +76,7 @@ namespace Input
             
             _applicationInput.Gameplay.Disable();
             _applicationInput.Dialog.Disable();
+            _applicationInput.Menu.Disable();
 
             switch (actionMap)
             {
@@ -80,6 +86,9 @@ namespace Input
                 case ActionMap.Dialog:
                     _applicationInput.Dialog.Enable();
                     break;
+                case ActionMap.Menu:
+                    _applicationInput.Menu.Enable();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(actionMap), actionMap, null);
             }
@@ -88,5 +97,7 @@ namespace Input
         public void EnableGameplayInput() => UpdateActiveActionMap(ActionMap.Gameplay);
 
         public void EnableDialogInput() => UpdateActiveActionMap(ActionMap.Dialog);
+
+        public void EnableMenuInput() => UpdateActiveActionMap(ActionMap.Menu);
     }
 }
