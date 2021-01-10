@@ -30,5 +30,9 @@ namespace Enemy
             animator.SetIsAtStartPosition(Mathf.Abs(gameObject.transform.position.x - startPosition.x) < 0.1f);
             if (playerTransform != null) playerPosition = playerTransform.position;
         }
+
+        public void OnTakeDamage() => animator.TriggerHurt(this);
+
+        public void OnDie() => animator.TriggerDie(this);
     }
 }

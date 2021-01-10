@@ -1,11 +1,13 @@
 ﻿using Interfaces;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Character
 {
     public class HealthHandler : MonoBehaviour, IDamageable
     {
         [SerializeField] private float health;
+        public UnityEvent onTakeDamage, onDie;
 
         public float Health
         {
@@ -15,12 +17,11 @@ namespace Character
 
         private bool CanDie() => Health <= 0;
 
-        private void DestroySelf() => Destroy(gameObject);
-
         public void OnTakeDamage(float amount)
         {
             Health -= amount;
-            if (CanDie()) DestroySelf();
+            if (CanDie()) onDie?.Invoke();
+            else onTakeDamage?.Invoke();
         }
     }
 }
