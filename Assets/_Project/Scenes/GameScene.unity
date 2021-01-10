@@ -970,7 +970,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1105402313}
   - component: {fileID: 1105402314}
-  - component: {fileID: 1105402315}
   m_Layer: 0
   m_Name: StartCutSceneTrigger
   m_TagString: Untagged
@@ -1004,25 +1003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac7d2f0c04f4f5cbb80a09d5696ecc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCutSceneOnAwake: 0
-  canReplay: 0
+  startCutSceneOnAwake: 1
+  canReplay: 1
   cutSceneSO: {fileID: 11400000, guid: dd4fecf0fd434f143abead0bb495cc41, type: 2}
---- !u!58 &1105402315
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105402312}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3.45
 --- !u!1 &1131650938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +2660,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8666226353023352696, guid: b1b3b86af92521f4cba81f851e8f2689,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8666226353023352697, guid: b1b3b86af92521f4cba81f851e8f2689,
         type: 3}
       propertyPath: m_Name
@@ -2685,12 +2673,12 @@ PrefabInstance:
     - target: {fileID: 8666226353023352699, guid: b1b3b86af92521f4cba81f851e8f2689,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.21
+      value: -53.13
       objectReference: {fileID: 0}
     - target: {fileID: 8666226353023352699, guid: b1b3b86af92521f4cba81f851e8f2689,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.94
+      value: -3.084
       objectReference: {fileID: 0}
     - target: {fileID: 8666226353023352699, guid: b1b3b86af92521f4cba81f851e8f2689,
         type: 3}
