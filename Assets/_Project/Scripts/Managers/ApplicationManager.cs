@@ -4,12 +4,7 @@ using Utilities;
 
 namespace Managers
 {
-    // public enum GameScene
-    // {
-    //     StartCutScene,
-    //     TestScene
-    // }
-    
+
     public class ApplicationManager : SingletonMonoBehaviour<ApplicationManager>
     {
         private float _timeScale;
@@ -31,6 +26,11 @@ namespace Managers
         //     }
         //     ResetTimeScale();
         // }
+
+        public void ReloadGameScene()
+        {
+            SceneManager.LoadScene(0);
+        }
 
         public void ResumeGame() => ResetTimeScale();
 

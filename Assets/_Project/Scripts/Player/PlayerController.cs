@@ -93,6 +93,10 @@ namespace Player
         
         public void OnTakeDamage() => _animator.TriggerHurt(this);
 
-        public void OnDie() => _animator.TriggerDie(this);
+        public void OnDie()
+        {
+            _animator.TriggerDie(this);
+            GameOverManager.Instance.ShowGameOverUI();
+        }
     }
 }
