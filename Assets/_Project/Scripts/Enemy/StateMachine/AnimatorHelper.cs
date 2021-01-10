@@ -10,6 +10,7 @@ namespace Enemy.StateMachine
         private static readonly int IsAtStartPosition = Animator.StringToHash("IsAtStartPosition");
         private static readonly int Hurt = Animator.StringToHash("Hurt");
         private static readonly int Die = Animator.StringToHash("Die");
+        private static readonly int JumpOut = Animator.StringToHash("JumpOut");
         
         public static void SetIsPlayerInRange(this Animator animator, bool value) => animator.SetBool(IsPlayerInRange, value);
         public static void SetIsPlayerInAttackRange(this Animator animator, bool value) => animator.SetBool(IsPlayerInAttackRange, value);
@@ -17,5 +18,6 @@ namespace Enemy.StateMachine
         
         public static void TriggerHurt(this Animator animator, MonoBehaviour monoBehaviour) => animator.SetTriggerForFrame(monoBehaviour, Hurt);
         public static void TriggerDie(this Animator animator, MonoBehaviour monoBehaviour) => animator.SetTriggerForFrame(monoBehaviour, Die);
+        public static void TriggerJumpOut(this Animator animator, MonoBehaviour monoBehaviour) => animator.SetTriggerForFrame(monoBehaviour, JumpOut);
     }
 }

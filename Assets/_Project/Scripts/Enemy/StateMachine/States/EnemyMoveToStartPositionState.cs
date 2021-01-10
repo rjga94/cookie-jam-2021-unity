@@ -10,9 +10,9 @@ namespace Enemy.StateMachine.States
         
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            _controller = animator.GetComponent<EnemyController>();
+            _controller = animator.GetComponentInParent<EnemyController>();
             _data = _controller.data;
-            _rigidbody2D = animator.GetComponent<Rigidbody2D>();
+            _rigidbody2D = animator.GetComponentInParent<Rigidbody2D>();
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

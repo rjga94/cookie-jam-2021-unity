@@ -11,7 +11,7 @@ namespace Poucet.StateMachine.States
             if (stateInfo.normalizedTime >= .99f)
             {
                 _fightHandler.EndFight();
-                Destroy(animator.gameObject);
+                Destroy(animator.gameObject.gameObject);
             }
         }
     }

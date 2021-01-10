@@ -1,4 +1,5 @@
-﻿using Input;
+﻿using Enemy.StateMachine;
+using Input;
 using Interfaces;
 using Managers;
 using Sirenix.OdinInspector;
@@ -89,5 +90,9 @@ namespace Player
         }
 
         private bool CanInteract() => _interactable != null;
+        
+        public void OnTakeDamage() => _animator.TriggerHurt(this);
+
+        public void OnDie() => _animator.TriggerDie(this);
     }
 }

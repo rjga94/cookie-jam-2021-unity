@@ -11,6 +11,7 @@ namespace Enemy
         {
             _controller.playerTransform = other.gameObject.transform;
             _controller.animator.SetIsPlayerInRange(true);
+            _controller.StartCoroutine(_controller.TriggerJumpOut());
         }
 
         private void OnTriggerExit2D(Collider2D other)
