@@ -15,13 +15,10 @@ namespace Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("OnTriggerEnter2D", this);
-
             var damageable = other.GetComponent<IDamageable>();
             if (damageable == null || _hitObjects.Contains(other.GetInstanceID())) return;
             _hitObjects.Add(other.GetInstanceID());
             
-            Debug.Log($"damaged other with amount {attackPower}", this);
             damageable.OnTakeDamage(attackPower);
         }
     }
