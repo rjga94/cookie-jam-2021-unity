@@ -41,7 +41,7 @@ namespace Character
         {
             while (true)
             {
-                yield return new WaitForSeconds(.1f);
+                yield return new WaitForSeconds(1f);
                 if (Health < _maxHealth) Health += .1f;   
             }
         }
