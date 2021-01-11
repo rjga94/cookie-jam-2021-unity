@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
 using Utilities;
 
 namespace CutScene
@@ -6,6 +7,7 @@ namespace CutScene
     [System.Serializable]
     public class CutSceneSlide
     {
+        public AudioPoolSO sfx;
         public Sprite sprite;
         public string[] sentences;
     }
@@ -13,6 +15,7 @@ namespace CutScene
     [CreateAssetMenu(fileName = "CutScene", menuName = ScriptableObjectConstants.cutScenesDataPath + "Cut Scene", order = 0)]
     public class CutSceneSO : ScriptableObject
     {
+        public AudioPoolSO bgm;
         public CutSceneSlide[] slides;
     }
 }
