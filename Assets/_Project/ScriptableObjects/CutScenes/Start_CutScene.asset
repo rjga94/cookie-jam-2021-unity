@@ -12,21 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428c1b7a754c4262a81b3b85ac6eea1d, type: 3}
   m_Name: Start_CutScene
   m_EditorClassIdentifier: 
+  bgm: {fileID: 0}
   slides:
-  - sprite: {fileID: 21300000, guid: c44bfa712f58eb54da9f5916d06832e4, type: 3}
-    sentences:
-    - Mom!
-    - Dad!
-  - sprite: {fileID: 21300000, guid: 6c07c7435eb7b21468b1930bc4a9c9fe, type: 3}
-    sentences:
-    - Yes!
-    - They are gone!
-  - sprite: {fileID: 21300000, guid: b0b93da00a82cd94686d4b5fe532c18e, type: 3}
-    sentences:
-    - ZzZzZz...
-  - sprite: {fileID: 21300000, guid: 9c7607e11c29eff4290523f46ccfc3e6, type: 3}
-    sentences: []
-  - sprite: {fileID: 21300000, guid: 73c6061407a1ea74d8daf1e347d6f5b0, type: 3}
-    sentences: []
-  - sprite: {fileID: 21300000, guid: 6d998bfa6332b05469322b677b67dad2, type: 3}
+  - sfx: {fileID: 0}
+    sprite: {fileID: 0}
     sentences: []
