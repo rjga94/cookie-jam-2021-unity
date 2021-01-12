@@ -1979,6 +1979,98 @@ MonoBehaviour:
   startCutSceneOnAwake: 1
   canReplay: 0
   cutSceneSO: {fileID: 11400000, guid: dd4fecf0fd434f143abead0bb495cc41, type: 2}
+--- !u!1001 &1121659596
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1653578476}
+    m_Modifications:
+    - target: {fileID: 4171109895112106219, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_Name
+      value: Babayaga_Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106220, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: dialogSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 3fce9e0fbe7efdc40962f0cb59133486,
+        type: 2}
+    - target: {fileID: 4171109895112106221, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2660446620066941163, guid: ae2775a10bcfa85439dc6f1fd0e64a5f,
+        type: 3}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -89.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961933747196531546, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6d98b82b1a661c5458a5b9104f1cb5b2, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6aaef1c56f6e6cc4aab8548342a11223, type: 3}
+--- !u!4 &1121659597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4171109895112106223, guid: 6aaef1c56f6e6cc4aab8548342a11223,
+    type: 3}
+  m_PrefabInstance: {fileID: 1121659596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1131650938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,6 +3016,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608267936}
   m_CullTransparentMesh: 0
+--- !u!1 &1653578475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653578476}
+  m_Layer: 0
+  m_Name: Babayaga
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653578476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653578475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1121659597}
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683540369
 GameObject:
   m_ObjectHideFlags: 0
