@@ -50,6 +50,9 @@ namespace Managers
             textBox.text = "";
             _currentParagraph = _paragraphs.Dequeue();
             _animateTextCoroutine = StartCoroutine(AnimateText());
+
+            characterImage.sprite = _currentParagraph.frame;
+            
             AudioManager.Instance.SecondaryAudioSource.Stop();
             if (_currentParagraph.voice != null)
                 _currentParagraph.voice.Play(AudioManager.Instance.SecondaryAudioSource);

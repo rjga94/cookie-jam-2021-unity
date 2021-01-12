@@ -1,5 +1,6 @@
 ﻿using Audio;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace Character
 {
@@ -9,5 +10,6 @@ namespace Character
         [MultiLineProperty(8)]
         public string text;
         public AudioPoolSO voice;
+        public Sprite frame;
     }
 }
