@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d816f6f50c33443586a5aaa14f9d1d79, type: 3}
-  m_Name: Bgm_AudioPool
+  m_Name: LevelBGM_AudioPool
   m_EditorClassIdentifier: 
   samples:
-  - {fileID: 8300000, guid: 14b855c2f8aa0664c81d346e0c8a65a7, type: 3}
+  - {fileID: 8300000, guid: 040477713c7af334f9fc81bc8e9edca1, type: 3}
   volume: {x: 100, y: 100}
   pitch: {x: 100, y: 100}

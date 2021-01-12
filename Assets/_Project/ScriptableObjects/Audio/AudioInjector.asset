@@ -19,6 +19,16 @@ MonoBehaviour:
   PlayerHurt: {fileID: 0}
   PlayerDeath: {fileID: 0}
   PlayerLootPickup: {fileID: 0}
-  LevelBGM: {fileID: 0}
+  EnemyFootstep: {fileID: 0}
+  EnemyAttack: {fileID: 0}
+  EnemyHurt: {fileID: 0}
+  EnemyDeath: {fileID: 0}
+  PoucetFootstep: {fileID: 0}
+  PoucetAttack: {fileID: 0}
+  PoucetHurt: {fileID: 0}
+  PoucetDeath: {fileID: 0}
+  PoucetJump: {fileID: 0}
+  PoucetStomp: {fileID: 0}
+  LevelBGM: {fileID: 11400000, guid: aa0d4cd93545d9f4cbff68a283ac42a1, type: 2}
   CutSceneBGM: {fileID: 0}
   CutSceneSlideChange: {fileID: 0}

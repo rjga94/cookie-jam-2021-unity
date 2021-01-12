@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Input;
+using Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,15 +16,12 @@ namespace CutScene
         [SerializeField] private Image image;
         [SerializeField] private TMP_Text subtitleText;
         [SerializeField, Range(0.001f, 0.1f)] private float imageAnimationSpeed, textAnimationSpeed;
-
-        private AudioSource _audioSource;
+        
         private Queue<CutSceneSlide> _slides;
         private CutSceneSlide _currentSlide;
         private Queue<string> _sentences;
         private string _currentSentence;
         private Coroutine _animateTextCoroutine, _animateImageCoroutine;
-
-        private void Awake() => _audioSource = GetComponent<AudioSource>();
 
         #region Input events
 
@@ -110,7 +107,7 @@ namespace CutScene
 
         private void DisableCutSceneUI()
         {
-            _audioSource.Stop();
+            AudioManager.Instance.PlayGamePlayMusic();
             InputReader.Instance.stepDialogEvent -= OnStepInput;
             InputReader.Instance.closeDialogEvent -= OnCloseInput;
             InputReader.Instance.EnableGameplayInput();
@@ -119,7 +116,7 @@ namespace CutScene
         
         public void StartCutScene(CutSceneSO cutSceneSO)
         {
-            if (cutSceneSO.bgm != null) cutSceneSO.bgm.Play(_audioSource);
+            if (cutSceneSO.bgm != null) cutSceneSO.bgm.Play(AudioManager.Instance.AudioSource);
             _slides = new Queue<CutSceneSlide>(cutSceneSO.slides);
             EnableCutSceneUI();
             AnimateNextCutScene();
