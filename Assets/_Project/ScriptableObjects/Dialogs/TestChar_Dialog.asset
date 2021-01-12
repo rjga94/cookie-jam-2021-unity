@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestChar_Dialog
   m_EditorClassIdentifier: 
   paragraphs:
-  - first sentence
   - second sentence ! second sentence !
   - third sentence! third sentence! third sentence!
   - fourth sentence! fourth sentence! fourth sentence! fourth sentence!
+  - 
