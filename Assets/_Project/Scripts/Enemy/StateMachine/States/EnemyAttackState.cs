@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Enemy.StateMachine.States
 {
     public class EnemyAttackState : StateMachineBehaviour
     {
-        [SerializeField] private GameObject attackColliderGO;
-        
-        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) => attackColliderGO.SetActive(true);
+        public static event Action onEnterAttackState, onExitAttackState;
 
-        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) => attackColliderGO.SetActive(false);
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) =>
+            onEnterAttackState?.Invoke();
+
+        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) =>
+            onExitAttackState?.Invoke();
     }
 }

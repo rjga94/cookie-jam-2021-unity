@@ -1,10 +1,11 @@
 ﻿using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Utilities;
 
 namespace Poucet
 {
-    public class PoucetFightHandler : MonoBehaviour
+    public class PoucetFightHandler : SingletonMonoBehaviour<PoucetFightHandler>
     {
         [SerializeField, LabelText("Walls")] private GameObject[] wallGOs;
         [SerializeField] private PolygonCollider2D originalConfiner, fightConfiner;

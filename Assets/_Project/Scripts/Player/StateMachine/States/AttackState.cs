@@ -1,11 +1,11 @@
-﻿using Managers;
+﻿using System;
 using UnityEngine;
 
 namespace Player.States
 {
     public class AttackState : StateMachineBehaviour
     {
-        [SerializeField] private GameObject attackColliderGO;
+        public static event Action onEnterAttackState, onExitAttackState;
         // private AudioSource _audioSource;
         
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -13,12 +13,12 @@ namespace Player.States
             // _audioSource = animator.GetComponent<AudioSource>();
             // AudioManager.Instance.AudioInjectorSO.PlayerAttack.Play(_audioSource);
             
-            attackColliderGO.SetActive(true);
+            onEnterAttackState?.Invoke();
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            attackColliderGO.SetActive(false);
+            onExitAttackState?.Invoke();
         }
     }
 }

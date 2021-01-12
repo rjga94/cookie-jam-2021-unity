@@ -9,6 +9,7 @@ namespace Enemy
         
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (_controller == null || _controller.animator == null) return;
             _controller.playerTransform = other.gameObject.transform;
             _controller.animator.SetIsPlayerInRange(true);
             _controller.StartCoroutine(_controller.TriggerJumpOut());
@@ -16,6 +17,7 @@ namespace Enemy
 
         private void OnTriggerExit2D(Collider2D other)
         {
+            if (_controller == null || _controller.animator == null) return;
             _controller.animator.SetIsPlayerInRange(false);
             _controller.playerTransform = null;
         }

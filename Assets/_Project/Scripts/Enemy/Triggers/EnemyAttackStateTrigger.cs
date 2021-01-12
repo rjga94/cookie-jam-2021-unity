@@ -7,8 +7,16 @@ namespace Enemy
     {
         [SerializeField] private EnemyController _controller;
         
-        private void OnTriggerEnter2D(Collider2D other) => _controller.animator.SetIsPlayerInAttackRange(true);
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (_controller == null || _controller.animator == null) return;
+            _controller.animator.SetIsPlayerInAttackRange(true);
+        }
 
-        private void OnTriggerExit2D(Collider2D other) => _controller.animator.SetIsPlayerInAttackRange(false);
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (_controller == null || _controller.animator == null) return;
+            _controller.animator.SetIsPlayerInAttackRange(false);
+        }
     }
 }

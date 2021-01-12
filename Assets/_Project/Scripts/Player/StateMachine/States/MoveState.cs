@@ -18,11 +18,13 @@ namespace Player.States
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            if (_rigidbody2D == null) return;
             _rigidbody2D.velocity = new Vector2(_controller.movementAxis.x * _data.movementSpeed * Time.fixedDeltaTime, _rigidbody2D.velocity.y);
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex, AnimatorControllerPlayable controller)
         {
+            if (_rigidbody2D == null) return;
             _rigidbody2D.velocity = new Vector2(0, _rigidbody2D.velocity.y);
         }
     }
