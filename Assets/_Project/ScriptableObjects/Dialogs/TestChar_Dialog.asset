@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: TestChar_Dialog
   m_EditorClassIdentifier: 
   paragraphs:
-  - second sentence ! second sentence !
-  - third sentence! third sentence! third sentence!
-  - fourth sentence! fourth sentence! fourth sentence! fourth sentence!
+  - text: paragraph 1
+    voice: {fileID: 0}
+  - text: paragraph 2
+    voice: {fileID: 0}
+  - text: paragraph 3
+    voice: {fileID: 0}

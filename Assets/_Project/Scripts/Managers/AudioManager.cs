@@ -1,4 +1,5 @@
-﻿using Audio;
+﻿using System;
+using Audio;
 using UnityEngine;
 using Utilities;
 
@@ -6,21 +7,18 @@ namespace Managers
 {
     public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
-        private AudioSource _audioSource;
+        [SerializeField] private AudioSource mainAudioSource, secondaryAudioSource;
         
         [SerializeField] public AudioInjectorSO AudioInjectorSO;
 
-        public AudioSource AudioSource => _audioSource;
+        public AudioSource MainAudioSource => mainAudioSource;
+        public AudioSource SecondaryAudioSource => secondaryAudioSource;
 
-        private void Awake()
-        {
-            _audioSource = GetComponent<AudioSource>();
-            PlayGamePlayMusic();
-        }
+        private void Awake() => PlayGamePlayMusic();
 
         public void PlayGamePlayMusic()
         {
-            if (AudioInjectorSO.LevelBGM != null) AudioInjectorSO.LevelBGM.Play(_audioSource);
+            if (AudioInjectorSO.LevelBGM != null) AudioInjectorSO.LevelBGM.Play(mainAudioSource);
         }
     }
 }

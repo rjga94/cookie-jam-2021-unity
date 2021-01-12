@@ -17,8 +17,8 @@ namespace Managers
         [SerializeField] private TMP_Text textBox;
         [SerializeField, Range(0.01f, 1f)] private float textAnimationSpeed;
 
-        private Queue<string> _paragraphs;
-        private string _currentParagraph;
+        private Queue<Paragraph> _paragraphs;
+        private Paragraph _currentParagraph;
         private Coroutine _animateTextCoroutine;
 
         #region Input events
@@ -36,7 +36,7 @@ namespace Managers
 
         private IEnumerator AnimateText()
         {
-            foreach (var c in _currentParagraph)
+            foreach (var c in _currentParagraph.text)
             {
                 textBox.text += c;
                 yield return new WaitForSeconds(textAnimationSpeed);
@@ -50,6 +50,9 @@ namespace Managers
             textBox.text = "";
             _currentParagraph = _paragraphs.Dequeue();
             _animateTextCoroutine = StartCoroutine(AnimateText());
+            AudioManager.Instance.SecondaryAudioSource.Stop();
+            if (_currentParagraph.voice != null)
+                _currentParagraph.voice.Play(AudioManager.Instance.SecondaryAudioSource);
         }
 
         private void SkipAnimation()
@@ -58,7 +61,7 @@ namespace Managers
             
             StopCoroutine(_animateTextCoroutine);
             _animateTextCoroutine = null;
-            textBox.text = _currentParagraph;
+            textBox.text = _currentParagraph.text;
         }
 
         private void EnableDialogBox()
@@ -79,7 +82,7 @@ namespace Managers
         
         public void StartDialog(DialogSO dialogSO)
         {
-            _paragraphs = new Queue<string>(dialogSO.paragraphs);
+            _paragraphs = new Queue<Paragraph>(dialogSO.paragraphs);
             EnableDialogBox();
             AnimateNextParagraph();
         }

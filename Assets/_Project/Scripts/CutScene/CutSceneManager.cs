@@ -116,7 +116,7 @@ namespace CutScene
         
         public void StartCutScene(CutSceneSO cutSceneSO)
         {
-            if (cutSceneSO.bgm != null) cutSceneSO.bgm.Play(AudioManager.Instance.AudioSource);
+            if (cutSceneSO.bgm != null) cutSceneSO.bgm.Play(AudioManager.Instance.MainAudioSource);
             _slides = new Queue<CutSceneSlide>(cutSceneSO.slides);
             EnableCutSceneUI();
             AnimateNextCutScene();
