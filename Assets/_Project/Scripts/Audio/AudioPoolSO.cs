@@ -22,6 +22,8 @@ namespace Audio
 
         public void Play(AudioSource audioSource)
         {
+            if (samples == null || samples.Length == 0) return;
+
             var rnd = new System.Random();
             audioSource.volume = rnd.Next((int) volume.x, (int) volume.y) * 0.01f;
             audioSource.pitch = rnd.Next((int) pitch.x, (int) pitch.y) * 0.01f;
@@ -42,6 +44,15 @@ namespace Audio
             }
             
             Play(audioSource);
+        }
+        
+        [Button("Stop")]
+        private void OnStopButtonClick()
+        {
+            var audioSource = GameObject.Find("AudioPoolSOPreview")?.GetComponent<AudioSource>();
+            if (audioSource == null) return;
+
+            audioSource.Stop();
         }
 #endif
     }
