@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 053f06f4c8504157a632b0bdb744542c, type: 3}
-  m_Name: Gretel_Dialog
+  m_Name: Hansel_Dialog
   m_EditorClassIdentifier: 
   paragraphs:
-  - text: p1
+  - text: hansel
     voice: {fileID: 0}
-    frame: {fileID: 21300000, guid: fee647d66baa4b546964e014f7b8cf92, type: 3}
-  - text: paragraph 2
+    frame: {fileID: 21300000, guid: 276796ce0f393cf4290712057e4007d4, type: 3}
+  - text: hansel 2
     voice: {fileID: 0}
-    frame: {fileID: 21300000, guid: fee647d66baa4b546964e014f7b8cf92, type: 3}
-  - text: paragraph 3
+    frame: {fileID: 21300000, guid: 276796ce0f393cf4290712057e4007d4, type: 3}
+  - text: hansel 3
     voice: {fileID: 0}
-    frame: {fileID: 21300000, guid: fee647d66baa4b546964e014f7b8cf92, type: 3}
+    frame: {fileID: 21300000, guid: 276796ce0f393cf4290712057e4007d4, type: 3}
