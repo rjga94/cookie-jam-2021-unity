@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053f06f4c8504157a632b0bdb744542c, type: 3}
   m_Name: Babayaga_Dialog
   m_EditorClassIdentifier: 
+  disableNPCWhenDialogEnds: 0
+  teleportLocation: {fileID: 0}
   paragraphs:
-  - text: babayaga 1
+  - text: Hey sweety, what are you doing out of the pan?
     voice: {fileID: 0}
     frame: {fileID: 21300000, guid: fd08a0452cae6a34186757579a19acb9, type: 3}
-  - text: babayaga 2
+  - text: I'm not talking to witches! Leave us alone!
+    voice: {fileID: 0}
+    frame: {fileID: 21300000, guid: 6f53671e5fc52cd4a869e77c1d9d5688, type: 3}
+  - text: Oh my poor cookie, what did Gretel tell you...
     voice: {fileID: 0}
     frame: {fileID: 21300000, guid: fd08a0452cae6a34186757579a19acb9, type: 3}

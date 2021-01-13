@@ -2188,7 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f459289816274aea9131ef22a287d301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 1
+  attackPower: 0.5
   isEnemy: 1
 --- !u!1 &1071716210
 GameObject:
@@ -2405,7 +2405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081623832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -112.89, y: -0.42000055, z: -10}
+  m_LocalPosition: {x: -2.3199952, y: -0.42000008, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2461,7 +2461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1105402313
 Transform:
   m_ObjectHideFlags: 0
@@ -4129,7 +4129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f459289816274aea9131ef22a287d301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 1
+  attackPower: 0.5
   isEnemy: 1
 --- !u!1 &1907911309
 GameObject:
@@ -5104,7 +5104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100099514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -112.89, y: -3.65, z: -10}
+  m_LocalPosition: {x: -2.32, y: -2.54, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1147206374}
@@ -5243,6 +5243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182871405600231761, guid: b1b3b86af92521f4cba81f851e8f2689,
+        type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8666226353023352697, guid: b1b3b86af92521f4cba81f851e8f2689,
         type: 3}
@@ -5566,12 +5571,12 @@ PrefabInstance:
     - target: {fileID: 6731287493850758338, guid: 599b64986e61b2f4bb400db8fa624fda,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -112.89
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 6731287493850758338, guid: 599b64986e61b2f4bb400db8fa624fda,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.65
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 6731287493850758338, guid: 599b64986e61b2f4bb400db8fa624fda,
         type: 3}
@@ -6066,6 +6071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182871405600231761, guid: b1b3b86af92521f4cba81f851e8f2689,
+        type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8666226353023352697, guid: b1b3b86af92521f4cba81f851e8f2689,
         type: 3}

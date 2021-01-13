@@ -15,12 +15,17 @@ MonoBehaviour:
   disableNPCWhenDialogEnds: 1
   teleportLocation: {fileID: 0}
   paragraphs:
-  - text: hansel
+  - text: ...
     voice: {fileID: 0}
     frame: {fileID: 21300000, guid: 276796ce0f393cf4290712057e4007d4, type: 3}
-  - text: hansel 2
+  - text: "Don\u2019t be afraid, I\u2019m here to help. I\u2019ll get you back to
+      your sister, no problem!"
+    voice: {fileID: 0}
+    frame: {fileID: 21300000, guid: 6f53671e5fc52cd4a869e77c1d9d5688, type: 3}
+  - text: (!!!!)
     voice: {fileID: 0}
     frame: {fileID: 21300000, guid: 276796ce0f393cf4290712057e4007d4, type: 3}
-  - text: hansel 3
+  - text: "It\u2019s okay, I\u2019m a soldier. So, I\u2019ll keep you safe. Your
+      sister said that  she won\u2019t leave without you."
     voice: {fileID: 0}
-    frame: {fileID: 21300000, guid: 276796ce0f393cf4290712057e4007d4, type: 3}
+    frame: {fileID: 21300000, guid: 6f53671e5fc52cd4a869e77c1d9d5688, type: 3}
