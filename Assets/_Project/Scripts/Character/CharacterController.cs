@@ -9,6 +9,6 @@ namespace Character
     {
         [SerializeField, InlineEditor] private DialogSO dialogSO;
         
-        public void OnInteract() => DialogManager.Instance.StartDialog(dialogSO);
+        public void OnInteract() => DialogManager.Instance.StartDialog(dialogSO, gameObject);
     }
 }

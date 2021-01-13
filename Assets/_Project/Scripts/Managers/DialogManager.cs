@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Character;
 using Input;
+using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,9 +18,12 @@ namespace Managers
         [SerializeField] private TMP_Text textBox;
         [SerializeField, Range(0.01f, 1f)] private float textAnimationSpeed;
 
+        private GameObject _npcGO;
+        private bool _disableNPCWhenDialogEnds;
         private Queue<Paragraph> _paragraphs;
         private Paragraph _currentParagraph;
         private Coroutine _animateTextCoroutine;
+        private Transform _teleportLocation;
 
         #region Input events
 
@@ -77,14 +81,20 @@ namespace Managers
 
         private void DisableDialogBox()
         {
+            if (_teleportLocation != null) FindObjectOfType<PlayerController>().transform.position = _teleportLocation.position;
+            if (_disableNPCWhenDialogEnds) _npcGO.SetActive(false);
+
             InputReader.Instance.stepDialogEvent -= OnStepInput;
             InputReader.Instance.closeDialogEvent -= OnCloseInput;
             InputReader.Instance.EnableGameplayInput();
             dialogBoxGO.SetActive(false);
         }
         
-        public void StartDialog(DialogSO dialogSO)
+        public void StartDialog(DialogSO dialogSO, GameObject npcGO)
         {
+            _npcGO = npcGO;
+            _disableNPCWhenDialogEnds = dialogSO.disableNPCWhenDialogEnds;
+            _teleportLocation = dialogSO.teleportLocation;
             _paragraphs = new Queue<Paragraph>(dialogSO.paragraphs);
             EnableDialogBox();
             AnimateNextParagraph();

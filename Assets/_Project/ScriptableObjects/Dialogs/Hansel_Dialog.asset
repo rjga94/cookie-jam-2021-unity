@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053f06f4c8504157a632b0bdb744542c, type: 3}
   m_Name: Hansel_Dialog
   m_EditorClassIdentifier: 
+  disableNPCWhenDialogEnds: 1
+  teleportLocation: {fileID: 0}
   paragraphs:
   - text: hansel
     voice: {fileID: 0}
