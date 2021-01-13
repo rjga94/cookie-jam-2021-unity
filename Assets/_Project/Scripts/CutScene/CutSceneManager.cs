@@ -70,6 +70,7 @@ namespace CutScene
             _currentSlide = _slides.Dequeue();
             _sentences = new Queue<string>(_currentSlide.sentences);
             _animateImageCoroutine = StartCoroutine(FadeInImage(_currentSlide.sprite));
+            if (_currentSlide.sfx != null) _currentSlide.sfx.Play(AudioManager.Instance.SecondaryAudioSource);
             AnimateNextSentence();
         }
         

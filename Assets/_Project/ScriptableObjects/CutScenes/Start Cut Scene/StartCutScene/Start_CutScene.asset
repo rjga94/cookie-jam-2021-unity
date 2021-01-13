@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgm: {fileID: 11400000, guid: 5755b74f73722dc4f9161f80204d017c, type: 2}
   slides:
-  - sfx: {fileID: 0}
+  - sfx: {fileID: 11400000, guid: c68fb70b69f544c41b1637644530b0fa, type: 2}
     sprite: {fileID: 21300000, guid: c521004f45242f9459bca452960764e4, type: 3}
     sentences:
     - Mom? Dad?
-  - sfx: {fileID: 0}
+  - sfx: {fileID: 11400000, guid: 0bbfac1aa70702a4c86198838e63b9c4, type: 2}
     sprite: {fileID: 21300000, guid: d2147c4a2fc7dee4bb2b17bf668cea9e, type: 3}
     sentences:
     - "Yes! They\u2019re gone!"
-  - sfx: {fileID: 0}
+  - sfx: {fileID: 11400000, guid: cd9896455ffa0c54b840b7b6552a8e43, type: 2}
     sprite: {fileID: 21300000, guid: 4787fd2fca418344baec13356f265afe, type: 3}
     sentences:
     - "*yawn* so\u2026 good..."
-  - sfx: {fileID: 0}
+  - sfx: {fileID: 11400000, guid: a5f91a58ef9bea04eb5383f5d9640d91, type: 2}
     sprite: {fileID: 21300000, guid: c34c0df0b40a7d54b8c504da3186f3b9, type: 3}
     sentences:
     - "Oh! It worked! You\u2019re awake!"
@@ -35,7 +35,7 @@ MonoBehaviour:
       am I?
 
 '
-  - sfx: {fileID: 0}
+  - sfx: {fileID: 11400000, guid: 01224497e33462d469b57d5c32f3e648, type: 2}
     sprite: {fileID: 21300000, guid: d06d1f84e9f30984797bdacb8910f33c, type: 3}
     sentences:
     - "Shh\u2026 Stay calm. I\u2019m Gretel. I made\r\nyou.\r\n"
@@ -50,7 +50,7 @@ MonoBehaviour:
     - I need you to go into the forest and find my brother, Hansel. I have a plan,
       but I cannot leave without him.
     - He ran away after the witch cursed him with silence, and I fear for his safety.
-  - sfx: {fileID: 0}
+  - sfx: {fileID: 11400000, guid: 720f64924044f81429acc02a7f7c05c6, type: 2}
     sprite: {fileID: 21300000, guid: 38f92e6fde2a15f4aab16e6e66a9408a, type: 3}
     sentences:
     - Gretel, dear!
