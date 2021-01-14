@@ -35,7 +35,7 @@ namespace Enemy
 
         public IEnumerator TriggerJumpOut()
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1f);
             animator.TriggerJumpOut(this);
         }
 

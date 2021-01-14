@@ -2405,7 +2405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081623832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3199952, y: -0.42000008, z: -10}
+  m_LocalPosition: {x: -110.4, y: -0.4200003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2461,7 +2461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1105402313
 Transform:
   m_ObjectHideFlags: 0
@@ -4520,7 +4520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPower: 2.5
-  isEnemy: 0
+  isEnemy: 1
 --- !u!1 &1972205941
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,7 +5104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100099514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.32, y: -2.54, z: -10}
+  m_LocalPosition: {x: -110.4, y: -3.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1147206374}
@@ -5571,12 +5571,12 @@ PrefabInstance:
     - target: {fileID: 6731287493850758338, guid: 599b64986e61b2f4bb400db8fa624fda,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.32
+      value: -110.4
       objectReference: {fileID: 0}
     - target: {fileID: 6731287493850758338, guid: 599b64986e61b2f4bb400db8fa624fda,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.54
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 6731287493850758338, guid: 599b64986e61b2f4bb400db8fa624fda,
         type: 3}
