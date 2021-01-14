@@ -26,7 +26,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 4787fd2fca418344baec13356f265afe, type: 3}
     sentences:
     - "*yawn* so\u2026 good..."
-  - sfx: {fileID: 11400000, guid: c68fb70b69f544c41b1637644530b0fa, type: 2}
+  - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: c05de4566b7b4b749af1cd71c1b880d5, type: 3}
     sentences:
     - "Oh! It worked! You\u2019re awake!"
@@ -35,7 +35,7 @@ MonoBehaviour:
       am I?
 
 '
-  - sfx: {fileID: 11400000, guid: 0bbfac1aa70702a4c86198838e63b9c4, type: 2}
+  - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: 6fa0e7724e298594f87038d6f9a2886c, type: 3}
     sentences:
     - "Shh\u2026 Stay calm. I\u2019m Gretel. I made\r\nyou.\r\n"
@@ -54,7 +54,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 38f92e6fde2a15f4aab16e6e66a9408a, type: 3}
     sentences:
     - Gretel, dear!
-  - sfx: {fileID: 11400000, guid: cd9896455ffa0c54b840b7b6552a8e43, type: 2}
+  - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: d922e80e26a8b6545a308e31cd3eb686, type: 3}
     sentences:
     - Here, take these! Now go! Please find my brother and bring him back to me!
