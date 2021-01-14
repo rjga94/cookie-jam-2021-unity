@@ -2,6 +2,7 @@
 using Enemy.StateMachine.States;
 using Interfaces;
 using Player.States;
+using Poucet.StateMachine.States;
 using UnityEngine;
 
 namespace Player
@@ -20,7 +21,9 @@ namespace Player
             if (isEnemy)
             {
                 EnemyAttackState.onEnterAttackState += OnEnterAttackState;
-                EnemyAttackState.onExitAttackState += OnExitAttackState;   
+                EnemyAttackState.onExitAttackState += OnExitAttackState;
+                PoucetStomp.onEnterAttackState += OnEnterAttackState;
+                PoucetStomp.onExitAttackState += OnExitAttackState;
             }
             else
             {
@@ -34,7 +37,9 @@ namespace Player
             if (isEnemy)
             {
                 EnemyAttackState.onEnterAttackState -= OnEnterAttackState;
-                EnemyAttackState.onExitAttackState += OnExitAttackState;   
+                EnemyAttackState.onExitAttackState += OnExitAttackState; 
+                PoucetStomp.onEnterAttackState -= OnEnterAttackState;
+                PoucetStomp.onExitAttackState -= OnExitAttackState;
             }
             else
             {

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   samples:
   - {fileID: 8300000, guid: 14b855c2f8aa0664c81d346e0c8a65a7, type: 3}
-  volume: {x: 100, y: 100}
+  volume: {x: 40.2863, y: 41.92229}
   pitch: {x: 100, y: 100}
