@@ -7,7 +7,6 @@ namespace Character
     public class DialogSO : ScriptableObject
     {
         public bool disableNPCWhenDialogEnds;
-        public Transform teleportLocation;
         public Paragraph[] paragraphs;
     }
 }

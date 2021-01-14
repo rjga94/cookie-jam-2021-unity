@@ -23,7 +23,6 @@ namespace Managers
         private Queue<Paragraph> _paragraphs;
         private Paragraph _currentParagraph;
         private Coroutine _animateTextCoroutine;
-        private Transform _teleportLocation;
 
         #region Input events
 
@@ -81,7 +80,8 @@ namespace Managers
 
         private void DisableDialogBox()
         {
-            if (_teleportLocation != null) FindObjectOfType<PlayerController>().transform.position = _teleportLocation.position;
+            var teleportLocation = GameObject.FindWithTag("Respawn");
+            if (teleportLocation != null) FindObjectOfType<PlayerController>().transform.position = teleportLocation.transform.position;
             if (_disableNPCWhenDialogEnds) _npcGO.SetActive(false);
 
             InputReader.Instance.stepDialogEvent -= OnStepInput;
@@ -94,7 +94,6 @@ namespace Managers
         {
             _npcGO = npcGO;
             _disableNPCWhenDialogEnds = dialogSO.disableNPCWhenDialogEnds;
-            _teleportLocation = dialogSO.teleportLocation;
             _paragraphs = new Queue<Paragraph>(dialogSO.paragraphs);
             EnableDialogBox();
             AnimateNextParagraph();
