@@ -17,20 +17,20 @@ MonoBehaviour:
   - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: c521004f45242f9459bca452960764e4, type: 3}
     sentences:
-    - Mom? Dad?
+    - 'Kid: Mom? Dad?'
   - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: d2147c4a2fc7dee4bb2b17bf668cea9e, type: 3}
     sentences:
-    - "Yes! They\u2019re gone!"
+    - "Kid: Yes! They\u2019re gone!"
   - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: 4787fd2fca418344baec13356f265afe, type: 3}
     sentences:
-    - "*yawn* so\u2026 good..."
+    - "Kid : *yawn* so\u2026 good..."
   - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: c05de4566b7b4b749af1cd71c1b880d5, type: 3}
     sentences:
-    - "Oh! It worked! You\u2019re awake!"
-    - 'W-where am I? Who are you? What
+    - "??? : Oh! It worked! You\u2019re awake!"
+    - 'Kid : W-where am I? Who are you? What
 
       am I?
 
@@ -38,23 +38,25 @@ MonoBehaviour:
   - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: 6fa0e7724e298594f87038d6f9a2886c, type: 3}
     sentences:
-    - "Shh\u2026 Stay calm. I\u2019m Gretel. I made\r\nyou.\r\n"
-    - Why?
-    - "I need your help. A witch has locked \r\nme in this room and plans to eat
-      me!\r\n"
+    - "Gretel : Shh\u2026 Stay calm. I\u2019m Gretel. I made\r\nyou.\r"
+    - 'Kid : Why?'
+    - "Gretel : I need your help. A witch has locked \r\nme in this room and plans
+      to eat me!\r\n"
   - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: 6fa0e7724e298594f87038d6f9a2886c, type: 3}
     sentences:
-    - "That\u2019s her in the kitchen."
-    - How can I help?
-    - I need you to go into the forest and find my brother, Hansel. I have a plan,
-      but I cannot leave without him.
-    - He ran away after the witch cursed him with silence, and I fear for his safety.
+    - "Gretel : That\u2019s her in the kitchen."
+    - 'Kid : How can I help?'
+    - 'Gretel : I need you to go into the forest and find my brother, Hansel. I have
+      a plan, but I cannot leave without him.'
+    - 'Gretel : He ran away after the witch cursed him with silence, and I fear for
+      his safety.'
   - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: 38f92e6fde2a15f4aab16e6e66a9408a, type: 3}
     sentences:
-    - Gretel, dear!
+    - 'Babayaga : Gretel, dear!'
   - sfx: {fileID: 0}
     sprite: {fileID: 21300000, guid: d922e80e26a8b6545a308e31cd3eb686, type: 3}
     sentences:
-    - Here, take these! Now go! Please find my brother and bring him back to me!
+    - 'Gretel : Here, take these! Now go! Please find my brother and bring him back
+      to me!'
